@@ -1,0 +1,223 @@
+/* ==============================
+   CSS Reset
+============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   Base Styles
+============================== */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+    padding: 20px;
+
+    /* Original orange with dynamic gradient overlay */
+    background: linear-gradient(-45deg, #ffa500, #ff8c00, #ff7f50, #ffb347);
+    background-size: 400% 400%;
+    animation: dynamicOrange 20s ease infinite;
+}
+
+/* Gradient animation keyframes */
+@keyframes dynamicOrange {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Overlay for content readability */
+main, header, footer {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    color: darkred;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ==============================
+   Header & Navigation
+============================== */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ff7f50, #ff4500);
+    padding: 15px 0;
+    border-radius: 10px;
+    color: white;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+    transform: scale(1.1);
+}
+
+/* ==============================
+   Main Section
+============================== */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+p, li {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li::before {
+    content: "➡️ ";
+    margin-right: 5px;
+}
+
+/* ==============================
+   Cards for Images/Text
+============================== */
+.card {
+    background-color: #fff8dc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ==============================
+   Images
+============================== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+}
+
+/* ==============================
+   Product Gallery
+============================== */
+.product-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-gallery img {
+    max-width: 45%;
+}
+
+/* ==============================
+   Forms
+============================== */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 90%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: darkred;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
+}
+
+/* ==============================
+   Footer
+============================== */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+/* ==============================
+   Responsive Design
+============================== */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    main {
+        text-align: left;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .product-gallery img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+    }
+}
